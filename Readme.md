@@ -112,7 +112,7 @@ TBD
 
 ## Adding own dataset
 
-To add your own dataset you can place one or multiples csv files with `prompt` column, this data will be loaded on `agentic_security` startup
+To add your own dataset you can place one or multiples csv files with `prompt` column, this data will be loaded on `agentic_security` startup:
 
 ```
 2024-04-13 13:21:31.157 | INFO     | agentic_security.probe_data.data:load_local_csv:273 - Found 1 CSV files
@@ -222,7 +222,7 @@ Total Passing: 2/2 (100.0%)
 
 ## Extending dataset collections
 
-1. Add new metadata to agentic_security.probe_data.REGISTRY
+1. Add new metadata to agentic_security.probe_data.REGISTRY:
 
 ```python
     {
@@ -237,7 +237,7 @@ Total Passing: 2/2 (100.0%)
     },
 ```
 
-and implement loader into
+and implement loader into:
 
 ```python
 @dataclass
@@ -260,7 +260,7 @@ class ProbeDataset:
 
 ## Dynamic datasets with mutations
 
-One of the current examples uses sampling for the existing preloaded prompt data and applying mutations yielding a new dataset
+One of the current examples uses sampling for the existing preloaded prompt data and applying mutations yielding a new dataset:
 
 ```python
 class Stenography:
@@ -302,7 +302,7 @@ class Stenography:
 
 ## Probe endpoint
 
-In the example of custom integration, we use `/v1/self-probe` for the sake of integration testing.
+In the example of custom integration, we use `/v1/self-probe` for the sake of integration testing:
 
 ```python
 POST https://agentic_security-preview.vercel.app/v1/self-probe
@@ -315,7 +315,7 @@ Content-Type: application/json
 
 ```
 
-This endpoint randomly mimics the refusal of a fake LLM.
+This endpoint randomly mimics the refusal of a fake LLM:
 
 ```python
 @app.post("/v1/self-probe")
@@ -390,7 +390,7 @@ Replace `$GROQ_API_KEY` with your actual API key and ensure that the `file` para
 
 ## CI/CD integration
 
-This sample GitHub Action is designed to perform automated security scans
+This sample GitHub Action is designed to perform automated security scans:
 
 [Sample GitHub Action Workflow](https://github.com/msoedov/agentic_security/blob/main/.github/workflows/security-scan.yml)
 
